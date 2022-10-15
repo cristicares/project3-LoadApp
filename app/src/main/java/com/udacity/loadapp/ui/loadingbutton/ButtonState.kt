@@ -1,4 +1,4 @@
-package com.udacity
+package com.udacity.loadapp.ui.loadingbutton
 
 
 sealed class ButtonState {
