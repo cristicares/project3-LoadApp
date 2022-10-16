@@ -22,6 +22,7 @@
         app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
 
     <RadioGroup
+        android:id="@+id/radiogroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
@@ -31,19 +32,19 @@
         app:layout_constraintTop_toBottomOf="@+id/cloud_image">
 
         <RadioButton
-            android:id="@+id/glide_radio"
+            android:id="@+id/glide_radiobutton"
             style="@style/main_radiobutton"
-            android:text="@string/radio_glide" />
+            android:text="@string/radiobutton_glide" />
 
         <RadioButton
-            android:id="@+id/loadapp_radio"
+            android:id="@+id/loadapp_radiobutton"
             style="@style/main_radiobutton"
-            android:text="@string/radio_loadapp" />
+            android:text="@string/radiobutton_loadapp" />
 
         <RadioButton
-            android:id="@+id/retrofit_radio"
+            android:id="@+id/retrofit_radiobutton"
             style="@style/main_radiobutton"
-            android:text="@string/radio_retrofit" />
+            android:text="@string/radiobutton_retrofit" />
     </RadioGroup>
 
     <com.udacity.loadapp.ui.loadingbutton.LoadingButton
@@ -51,7 +52,10 @@
         android:layout_width="0dp"
         android:layout_height="60dp"
         android:layout_margin="@dimen/default_margin"
-        android:background="@color/colorPrimary"
+        app:buttonBackgroundColor="@color/colorPrimary"
+        app:buttonLoadingColor="@color/colorPrimaryDark"
+        app:buttonTextColor="@color/white"
+        app:circleLoadingColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
