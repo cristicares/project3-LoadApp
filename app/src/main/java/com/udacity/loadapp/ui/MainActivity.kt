@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
             .setRequiresCharging(false)
             .setAllowedOverMetered(true)
             .setAllowedOverRoaming(false)
-            .setDestinationUri("file:///sdcard/Download/file.html".toUri())
+            .setDestinationUri(getString(R.string.localtion_file).toUri())
 
         val downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
         downloadID =

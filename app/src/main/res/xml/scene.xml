@@ -19,25 +19,53 @@
     <!-- A transition describes an animation via start and end state -->
     <Transition
         app:constraintSetEnd="@+id/end"
-        app:constraintSetStart="@+id/start">
+        app:constraintSetStart="@+id/start"
+        app:duration="1000">
 
+        <OnSwipe
+            app:dragDirection="dragUp"
+            app:touchAnchorId="@id/webview"
+            app:touchAnchorSide="bottom" />
     </Transition>
 
 
     <!-- Constraints to apply at the start of the animation -->
     <ConstraintSet android:id="@+id/start">
         <Constraint
-            android:id="@id/appbar_layout"
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_margin="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@id/file_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_margin"
+            android:layout_marginTop="@dimen/large_margin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
             app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/ok_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/status_textview" />
     </ConstraintSet>
 
     <!-- Constraints to apply at the end of the animation -->
     <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/file_name_textview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Constraint
+            android:id="@id/ok_button"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/small_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
     </ConstraintSet>
+
 </MotionScene>

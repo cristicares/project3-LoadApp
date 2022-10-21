@@ -21,8 +21,7 @@
             android:layout_height="match_parent"
             android:minHeight="75dp"
             app:layoutDescription="@xml/scene"
-            app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
-            app:motionDebug="SHOW_PATH">
+            app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed">
 
             <TextView
                 android:id="@+id/file_name_label"

@@ -2,6 +2,7 @@ package com.udacity.loadapp.ui
 
 import android.app.DownloadManager
 import android.app.NotificationManager
+import android.content.Intent
 import android.database.Cursor
 import android.os.Bundle
 import android.util.Log
@@ -34,6 +35,12 @@ class DetailActivity : AppCompatActivity() {
         if (null != intent) {
             val downloadId = intent.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, 0)
             queryLastDownload(downloadId)
+        }
+
+        binding.detailLayout.okButton.setOnClickListener {
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK and Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
 
         doWebViewPrint()
