@@ -11,9 +11,12 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Environment
+import android.os.Handler
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.net.toUri
 import com.udacity.R
 import com.udacity.databinding.ActivityMainBinding
 import com.udacity.loadapp.util.sendNotification
@@ -69,16 +72,27 @@ class MainActivity : AppCompatActivity() {
             else -> return
         }
 
+        val nameFile = when (selectedRadioButton) {
+            R.id.glide_radiobutton -> getString(R.string.radiobutton_glide)
+            R.id.loadapp_radiobutton -> getString(R.string.radiobutton_loadapp)
+            R.id.retrofit_radiobutton -> getString(R.string.radiobutton_retrofit)
+            else -> return
+        }
+
+        Environment
+            .getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+            .mkdirs()
+
         val request = DownloadManager.Request(Uri.parse(selectedUrl))
-            .setTitle(getString(R.string.app_name))
-            .setDescription(getString(R.string.app_description))
+            .setDescription(nameFile)
             .setRequiresCharging(false)
             .setAllowedOverMetered(true)
-            .setAllowedOverRoaming(true)
+            .setAllowedOverRoaming(false)
+            .setDestinationUri("file:///sdcard/Download/file.html".toUri())
 
         val downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
         downloadID =
-            downloadManager.enqueue(request)// enqueue puts the download request in the queue.
+            downloadManager.enqueue(request)
     }
 
     private fun createChannel(channelId: String, channelName: String) {

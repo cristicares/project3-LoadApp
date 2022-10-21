@@ -33,17 +33,17 @@
 
         <RadioButton
             android:id="@+id/glide_radiobutton"
-            style="@style/main_radiobutton"
+            style="@style/mainRadiobutton"
             android:text="@string/radiobutton_glide" />
 
         <RadioButton
             android:id="@+id/loadapp_radiobutton"
-            style="@style/main_radiobutton"
+            style="@style/mainRadiobutton"
             android:text="@string/radiobutton_loadapp" />
 
         <RadioButton
             android:id="@+id/retrofit_radiobutton"
-            style="@style/main_radiobutton"
+            style="@style/mainRadiobutton"
             android:text="@string/radiobutton_retrofit" />
     </RadioGroup>
 

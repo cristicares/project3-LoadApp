@@ -10,7 +10,13 @@
 
     <string name="button_download">Download</string>
     <string name="button_loading">We are loading </string>
+    <string name="button_OK">OK</string>
+
     <string name="title_activity_detail">DetailActivity</string>
+    <string name="file_name">File name: </string>
+    <string name="status">Status: </string>
+    <string name="status_success">Success</string>
+    <string name="status_failed">Fail</string>
 
     <string name="radiobutton_glide">Glide - Image Loading Library by BumpTech</string>
     <string name="radiobutton_loadapp">LoadApp - Current repository by Udacity</string>
